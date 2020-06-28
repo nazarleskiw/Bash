@@ -1,0 +1,36 @@
+#!/bin/bash
+
+arg1=$1
+arg2=$2
+
+function funkcja1 () {
+    echo "argument 1: $1 argument2: $2"
+
+}
+function funkcja2 () {
+    echo "argument 1: $1 " > $2
+}
+
+
+if [ $# -eq 2 ]; then
+
+
+funkcja1 "$1" "$2"
+funkcja2 "$1" "$2"
+
+
+for ((i=100; i>=0; i--))
+do
+echo "i: $i"
+done
+
+elif [ $# -eq 1 ]; then
+echo "You entered only one argument, enter two arguments"
+
+elif [ $# -gt 2 ]; then
+
+echo "You entered too many arguments, enter two arguments"
+
+else
+echo "You did not enter an argument, enter two arguments"
+fi
